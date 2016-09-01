@@ -1,4 +1,4 @@
-import association
+# import association
 
 class mem(dict):
     def new(self, key, val):
@@ -36,14 +36,14 @@ def to_mem(arg):
     if type(arg) is dict:
         for key in arg.keys():
             arg[key] = [arg[key]]
-        arg = association.mem(arg)
+        arg = mem(arg)  # association.mem
     return arg
 
 
 class memes(list):
     def new(self, arg):
-        if not isinstance(arg, association.mem):
-            arg = association.to_mem(arg)
+        if not isinstance(arg, mem):  # association.mem
+            arg = to_mem(arg)  # association.to_mem
         self.append(arg)
 
     def find(self, word):
@@ -60,6 +60,7 @@ class memes(list):
         print(key, '-->', *sem_field[key], '________', sep='\n')
         for val in sem_field[key][:5]:
             if val not in a:
+                # print(self.find(val))
                 print(self.find3(val, sem_field, a))
         return '<--'
 
@@ -67,5 +68,3 @@ class memes(list):
         if val in sem_field.keys():
             return self.find2(val, sem_field, a)
         return '========'
-
-
