@@ -19,12 +19,13 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 from flask import Flask, render_template, jsonify, request
-
+from flask_cors import CORS, cross_origin
 
 __dir__ = os.path.dirname(__file__)
 
 app = Flask(__name__)
-
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 def _load_stimulus(stimulus_path):
     print >>sys.stderr, 'Loading stimulus data from {}'.format(
@@ -111,6 +112,7 @@ def _get_voxel_result(x, y, z, weights, mask, topn=10):
 
 
 @app.route('/get_voxel_result', methods=['GET'])
+@cross_origin()
 def get_voxel_result():
     global models
     global words
@@ -135,7 +137,6 @@ def get_voxel_result():
     else:
         result['status'] = 'ok'
         return jsonify(result)
-
 
 def main(options):
     global models
