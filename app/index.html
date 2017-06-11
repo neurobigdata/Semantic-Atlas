@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-2">
+        <label for="voxel-x">X: </label>
+        <input type="number" id="voxel-x" value="15">
+      </div>
+      <div class="col-xs-12 col-sm-2">
+        <label for="voxel-y">Y: </label>
+        <input type="number" id="voxel-y" value="93">
+      </div>
+      <div class="col-xs-12 col-sm-2">
+        <label for="voxel-z">Z: </label>
+        <input type="number" id="voxel-z" value="15">
+      </div>
+      <div class="col-xs-12 col-sm-2">
+        <label for="voxel-sub">Sub: </label>
+        <input type="number" id="voxel-sub" value="9">
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <button id="voxel-apply">Apply</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <div class="row">
+          <div class="col-xs-12">
+            <label for="correlation-score">Correlation Score</label>
+            <input type="text" id="correlation-score">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <table class="table table-bordered table-striped">
+              <tbody id="words"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-8">
+        <img id="slice" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" alt="">
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript" src="js/jquery-3.2.0.min.js"></script>
+  <script type="application/javascript" src="js/bootstrap.min.js"></script>
+  <script type="application/javascript" src="js/main.js"></script>
+  <script type="application/javascript" src="js/lodash.min.js"></script>
+</body>
+</html>
